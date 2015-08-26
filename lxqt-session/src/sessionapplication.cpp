@@ -206,10 +206,10 @@ void SessionApplication::loadMouseSettings(LxQt::Settings& settings)
     }
 
     // other mouse settings
-    int accel_factor = settings.value("accel_factor").toInt();
-    int accel_threshold = settings.value("accel_threshold").toInt();
-    if(accel_factor || accel_threshold)
-        XChangePointerControl(QX11Info::display(), accel_factor != 0, accel_threshold != 0, accel_factor, 10, accel_threshold);
+    int acc_factor = settings.value("acc_factor").toInt();
+    int acc_threshold = settings.value("acc_threshold").toInt();
+    if(acc_factor || acc_threshold)
+        XChangePointerControl(QX11Info::display(), acc_factor != 0, acc_threshold != 0, acc_factor, 10, acc_threshold);
 
     // left handed mouse?
     bool left_handed = settings.value("left_handed", false).toBool();
